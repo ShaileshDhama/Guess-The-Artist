@@ -66,7 +66,38 @@ resized.zip: same collection but images have been resized and extracted from fol
 #### Art Genres
 ![Art Genres](./ART_3.png)
 
-### For further information
+#### Genres based on Age_group of Artists
+![Genres based on Age_group of Artists](./ART_5.png)
+
+#### Age-Group Analysis
+![Age-Group Analysis](./ART_10.png)
+![Age-Group Boxenplots](./ART_19.png)
+
+#### Violin Paintings
+![Violin Paintings](./ART_13.png)
+
+#### Genres based on Nationality
+![Genres based on Nationality](./ART_15.png)
+
+#### Genres based on Languages
+![Genres based on Languages](./ART_18.png)
+
+#### Factorplots
+![Age-groups on Genres V/S Birth](./ART_27.png)
+![Age-groups on Genres V/S Birth](./ART_29.png)
+![Age-groups on Genres V/S Paintings](./ART_31.png)
+
+#### Training and Validation Metrics
+![Accuracy and Loss](./ART_33.png)
+
+#### Confusion Matrix
+![Age-groups on Genres V/S Birth](./ART_34.png)
+
+#### Prediction Output
+![Prediction Output](./ART_35.png)
+
+### For further information:
+
 Please review the narrative of our analysis in [our jupyter notebook](./Guess-The-Artist.ipynb)
 
 For any additional questions, please contact **shaileshettyd@gmail.com)
@@ -77,11 +108,11 @@ For any additional questions, please contact **shaileshettyd@gmail.com)
 
 ├── README.md                                               <- The top-level README for reviewers of this project.
 ├── Guess-The-Artist.ipynb                                  <- narrative documentation of analysis in jupyter notebook
-├── invoice-50.pdf                                          <- Dataset
+├── artists.csv                                             <- Dataset
 └── images                                                  <- generated from code
 
 ```
-## Citing
+## Citing :
 
 ```
 @misc{Shailesh:2020,
