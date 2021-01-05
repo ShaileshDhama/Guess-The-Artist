@@ -51,24 +51,23 @@ resized.zip: same collection but images have been resized and extracted from fol
            
 ## RESULTS :
 
-#### Scanned Image Visualisations
-![Scanned Image Visualisations](./STVER_1.png)
+#### Dataset Content
+![Dataset Content(./ART_36.png)
 
-#### Stamp Segmentation Sample
-![Stamp Segmentation Sample](./STVER_2.png)
-![Stamp Segmentation Sample](./STVER_3.png)
+#### Artists (>200 paintings)
+![Artists (>200 paintings)](./ART_37.png)
 
-#### Model Creation
-![Model Creation](./STVER_4.png)
+#### Random Paintings in dataset
+![Random Paintings in dataset](./ART_1.png)
 
-#### Model Summary
-![Model Summary](./STVER_5.png)
+#### Paintings Nationwise
+![Paintings Nationwise](./ART_2.png)
 
-#### Automated Segmentation Output
-![Automated Segmentation Output](./STVER_6.png)
+#### Art Genres
+![Art Genres](./ART_3.png)
 
 ### For further information
-Please review the narrative of our analysis in [our jupyter notebook](./segmentation-of-stamps-in-documents.ipynb)
+Please review the narrative of our analysis in [our jupyter notebook](./Guess-The-Artist.ipynb)
 
 For any additional questions, please contact **shaileshettyd@gmail.com)
 
@@ -77,7 +76,7 @@ For any additional questions, please contact **shaileshettyd@gmail.com)
 ```
 
 ├── README.md                                               <- The top-level README for reviewers of this project.
-├── segmentation-of-stamps-in-documents.ipynb               <- narrative documentation of analysis in jupyter notebook
+├── Guess-The-Artist.ipynb                                  <- narrative documentation of analysis in jupyter notebook
 ├── invoice-50.pdf                                          <- Dataset
 └── images                                                  <- generated from code
 
@@ -87,10 +86,10 @@ For any additional questions, please contact **shaileshettyd@gmail.com)
 ```
 @misc{Shailesh:2020,
   Author = {Shailesh Dhama},
-  Title = {Segmentation-of-Stamps-in-Documents},
+  Title = {Guess-The-Artist},
   Year = {2020},
   Publisher = {GitHub},
   Journal = {GitHub repository},
-  Howpublished = {\url{https://https://github.com/ShaileshDhama/Segmentation-of-Stamps-in-Documents}}
+  Howpublished = {\url{https://github.com/ShaileshDhama/Guess-The-Artist}}
 }
 ```
