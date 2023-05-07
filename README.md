@@ -1,126 +1,57 @@
 # Guess-The-Artist
-## To identify the artist analysing new pictures
 
-**Author** : SHAILESH DHAMA
+## Introduction
 
-Predicting the artists by their paintings is a tedious task,provided the knowledge of it. To make machine learn to predict/guess the artists is a challenging task.
-The dataset required a collection of artworks of the 50 most influential artists of all time with basic information retrieved from wikipedia. 
-I tried to create a convolutional neural network to recognise the artists looking the colors used and the geometric patterns inside the pictures.
+Predicting the artist of a painting can be a challenging task. However, with the advent of machine learning, we can train models to recognize artists by analyzing their artwork. In this project, I used a convolutional neural network to identify artists based on the colors and geometric patterns present in their paintings.
 
-## Objective:
+## Objective
 
-Develop an algorithm which will identify the artist when provided with a painting, with state of the art precision.
+The objective of this project is to develop an algorithm that can identify the artist of a painting with state-of-the-art precision.
 
-### Dataset:
+## Dataset
 
-This dataset contains three files:
+The dataset used in this project contains a collection of artworks from the 50 most influential artists of all time. The dataset also includes basic information retrieved from Wikipedia. The dataset consists of three files:
 
-artists.csv: dataset of information for each artist
-images.zip: collection of images (full size), divided in folders and sequentially numbered
-resized.zip: same collection but images have been resized and extracted from folder structure
-    
-## Approach:
+- artists.csv: dataset of information for each artist
+- images.zip: collection of full-size images, divided into folders and sequentially numbered
+- resized.zip: same collection, but images have been resized and extracted from folder structure
 
-1.Data processing:
+## Approach
 
-                There are paintings of 50 artists in the dataset. However only 11 artists have more than 200 paintings available here.
+### Data Processing
 
-                To reduce computation and better training, I decided to use the paintings of these 11 artists only.
+There are paintings of 50 artists in the dataset, but only 11 artists have more than 200 paintings available. To reduce computation and improve training, I used only the paintings of these 11 artists. Since the dataset is imbalanced (Van Gogh has 877 paintings, whereas Marc Chagall has only 239), class_weight is important. In fact, it improved model performance substantially.
 
-                Since this is an imbalanced datset (Van Gogh has 877 paintings whereas Marc Chagall has only 239), class_weight is important. Infact, it improved model   performance substantially.
+I used the Keras ImageDataGenerator for data augmentation. This is not a traditional object detection problem, so the augmentation approach should be used very carefully.
 
-                I used Keras ImageDataGenerator for data augmentation. This is not a traditional object detection problem, hence the augmentation approch should be used very carefully.
+### Modelling and Training
 
-2.Modelling and Training:
+I used a convolutional neural network based approach, with a pre-defined architecture as a baseline. I tried multiple architectures, but ResNet50 worked well so far. Pretrained weights on ImageNet helped the model train better.
 
-                Use Convolutional Neural Network based approach, with a pre-defined architecture as baseline.
+The objective is to identify the artist, not objects in the images. So the model should understand the style of the image better rather than the final output. Hence, training of shallow layers is more important than the deeper layers. The above statement is based on my understanding of the problem and experiments and observations. Training the model for more iterations might improve the performance, but it would increase computation resources.
 
-                I tried multiple architectures, however ResNet50 worked well so far.
+## Statistical Formulas
 
-                Pretrained weights on imagenet helped the model train better.
+Here are the statistical formulas used in this project, represented in LaTeX:
 
-                The objective is to identify artist and not objects in the images. So the model should understand the style of the image better rather than the final output. Hence, training of shallow layers is more important than the deeper layers.
+- Mean Absolute Error: $MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y_i}|$
+- Accuracy: $Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$
+- Precision: $Precision = \frac{TP}{TP + FP}$
+- Recall: $Recall = \frac{TP}{TP + FN}$
+- F1 Score: $F1 = 2 * \frac{Precision * Recall}{Precision + Recall}$
+### Results
 
-                The above statement is based on my understanding of the problem and experiments and observations.
+The final model could identify the artists with an approximate accuracy of 99% on the training set and 85% on the cross-validation set.
 
-                Training the model for more iterations might improve the performance, at the cost of computation resource.
+## Additional Information
 
-3.Predictions:
+For further information, please review the narrative of our analysis in [our jupyter notebook](./Guess-The-Artist.ipynb). If you have any additional questions, please contact **shaileshettyd@gmail.com**.
 
-                The final model could identify the artists with an approximate accuracy of 99% on training set and 85% on cross-validation set.
-           
-## RESULTS :
-
-#### Dataset Content
-![Dataset Content(./ART_36.png)
-
-#### Artists (>200 paintings)
-![Artists (>200 paintings)](./ART_37.png)
-
-#### Random Paintings in dataset
-![Random Paintings in dataset](./ART_1.png)
-
-#### Paintings Nationwise
-![Paintings Nationwise](./ART_2.png)
-
-#### Art Genres
-![Art Genres](./ART_3.png)
-
-#### Genres based on Age_group of Artists
-![Genres based on Age_group of Artists](./ART_5.png)
-
-#### Age-Group Analysis
-![Age-Group Analysis](./ART_10.png)
-![Age-Group Boxenplots](./ART_19.png)
-
-#### Violin Paintings
-![Violin Paintings](./ART_13.png)
-
-#### Genres based on Nationality
-![Genres based on Nationality](./ART_15.png)
-
-#### Genres based on Languages
-![Genres based on Languages](./ART_18.png)
-
-#### Factorplots
-![Age-groups on Genres V/S Birth](./ART_27.png)
-![Age-groups on Genres V/S Birth](./ART_29.png)
-![Age-groups on Genres V/S Paintings](./ART_31.png)
-
-#### Training and Validation Metrics
-![Accuracy and Loss](./ART_33.png)
-
-#### Confusion Matrix
-![Age-groups on Genres V/S Birth](./ART_34.png)
-
-#### Prediction Output
-![Prediction Output](./ART_35.png)
-
-### For further information:
-
-Please review the narrative of our analysis in [our jupyter notebook](./Guess-The-Artist.ipynb)
-
-For any additional questions, please contact **shaileshettyd@gmail.com)
-
-##### Repository Structure:
+## Repository Structure
 
 ```
-
-├── README.md                                               <- The top-level README for reviewers of this project.
-├── Guess-The-Artist.ipynb                                  <- narrative documentation of analysis in jupyter notebook
-├── artists.csv                                             <- Dataset
-└── images                                                  <- generated from code
-
-```
-## Citing :
-
-```
-@misc{Shailesh:2020,
-  Author = {Shailesh Dhama},
-  Title = {Guess-The-Artist},
-  Year = {2020},
-  Publisher = {GitHub},
-  Journal = {GitHub repository},
-  Howpublished = {\url{https://github.com/ShaileshDhama/Guess-The-Artist}}
-}
+├── README.md                    <- The top-level README for reviewers of this project.
+├── Guess-The-Artist.ipynb       <- Narrative documentation of analysis in Jupyter notebook.
+├── artists.csv                  <- Dataset.
+└── images                       <- Generated from code.
 ```
